@@ -32,7 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Email-Phone'),
+        title: Text(
+          "Email and Phone",
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w400,
+              fontFamily: "Roboto"),
+        ),
       ),
       body: Center(
         child: Column(
@@ -43,32 +49,33 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
-                  onPressed: buttonPressed,
-                  //color: const Color(0xFFe0e0e0),
-                  child: Text(
-                    "E-mail",
-                    style: TextStyle(
-                        fontSize: 22.0,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w200,
-                        fontFamily: "Roboto"),
-                  ),
-                ),
+                    onPressed: buttonPressed,
+                    child: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "E-mail",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.w200,
+                            fontFamily: "Roboto"),
+                      ),
+                    )),
               ),
               Padding(
                 padding: EdgeInsets.all(5),
-                child: ElevatedButton(
-                  onPressed: buttonPressed,
-                  //color: const Color(0xFFe0e0e0),
-                  child: Text(
-                    "Phone",
-                    style: TextStyle(
-                        fontSize: 22.0,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w200,
-                        fontFamily: "Roboto"),
-                  ),
-                ),
+                child: OutlinedButton(
+                    onPressed: buttonPressed,
+                    child: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "Phone",
+                        style: TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.w200,
+                            fontFamily: "Roboto"),
+                      ),
+                    )),
               ),
             ]),
       ),
