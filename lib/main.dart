@@ -10,10 +10,10 @@ class EmailPhone extends StatelessWidget {
     return new MaterialApp(
       title: 'Auto Email and Phone',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
-        primaryColor: const Color(0xFF2196f3),
-        accentColor: const Color(0xFF2196f3),
-        canvasColor: const Color(0xFFfafafa),
+        primarySwatch: Colors.lightGreen,
+        primaryColor: Colors.blueGrey,
+        accentColor: Colors.blueAccent,
+        canvasColor: Colors.white,
       ),
       home: new MyHomePage(),
     );
@@ -34,34 +34,44 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Email-Phone'),
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-                onPressed: buttonPressed,
-                //color: const Color(0xFFe0e0e0),
-                child: Text(
-                  "E-mail",
-                  style: TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
-                )),
-            ElevatedButton(
-                onPressed: buttonPressed,
-                //color: const Color(0xFFe0e0e0),
-                child: Text(
-                  "Phone",
-                  style: TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
-                ))
-          ]),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                  onPressed: buttonPressed,
+                  //color: const Color(0xFFe0e0e0),
+                  child: Text(
+                    "E-mail",
+                    style: TextStyle(
+                        fontSize: 22.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w200,
+                        fontFamily: "Roboto"),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: ElevatedButton(
+                  onPressed: buttonPressed,
+                  //color: const Color(0xFFe0e0e0),
+                  child: Text(
+                    "Phone",
+                    style: TextStyle(
+                        fontSize: 22.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w200,
+                        fontFamily: "Roboto"),
+                  ),
+                ),
+              ),
+            ]),
+      ),
     );
   }
 
