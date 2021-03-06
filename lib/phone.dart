@@ -4,14 +4,12 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatefulWidget {
+class PhoneCaller extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _PhoneCallerState createState() => new _PhoneCallerState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _PhoneCallerState extends State<PhoneCaller> {
   TextEditingController _numberCtrl = new TextEditingController();
 
   @override

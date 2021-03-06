@@ -1,3 +1,5 @@
+import 'package:email_phone/email_flutter_mailer.dart';
+import 'package:email_phone/phone.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,7 +51,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
-                    onPressed: buttonPressed,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => (EmailSend()),
+                        ),
+                      );
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
@@ -65,7 +74,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: EdgeInsets.all(5),
                 child: OutlinedButton(
-                    onPressed: buttonPressed,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => (PhoneCaller()),
+                        ),
+                      );
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
@@ -81,6 +97,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
-  void buttonPressed() {}
 }

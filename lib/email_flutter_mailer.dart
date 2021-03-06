@@ -6,14 +6,12 @@ import 'package:flutter_mailer/flutter_mailer.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
+class EmailSend extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _EmailSendState createState() => _EmailSendState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _EmailSendState extends State<EmailSend> {
   bool useTempDirectory = true;
   List<String> attachment = <String>[];
   final TextEditingController _subjectController =
