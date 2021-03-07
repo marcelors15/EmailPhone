@@ -12,8 +12,10 @@ class EmailPhone extends StatelessWidget {
     return new MaterialApp(
       title: 'Auto Email and Phone',
       theme: new ThemeData(
-        primarySwatch: Colors.lightGreen,
-        primaryColor: Colors.blueGrey,
+        //primarySwatch: Colors.lightGreen,
+        primarySwatch: Colors.lightBlue,
+        //primaryColor: Colors.blueGrey,
+        primaryColor: Colors.blue,
         accentColor: Colors.blueAccent,
         canvasColor: Colors.white,
       ),

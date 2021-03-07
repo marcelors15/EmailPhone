@@ -24,6 +24,14 @@ class _PhoneCallerState extends State<PhoneCaller> {
       home: new Scaffold(
         appBar: new AppBar(
           title: const Text('Plugin example app'),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back),
+            )
+          ],
         ),
         body: new Column(children: <Widget>[
           Padding(

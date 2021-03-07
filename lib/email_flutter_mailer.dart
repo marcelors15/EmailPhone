@@ -14,12 +14,15 @@ class EmailSend extends StatefulWidget {
 class _EmailSendState extends State<EmailSend> {
   bool useTempDirectory = true;
   List<String> attachment = <String>[];
+
   final TextEditingController _subjectController =
       TextEditingController(text: 'the Subject');
+
   final TextEditingController _bodyController = TextEditingController(
       text: '''  <em>the body has <code>HTML</code></em> <br><br><br>
   <strong>Some Apps like Gmail might ignore it</strong>
   ''');
+
   final GlobalKey<ScaffoldState> _scafoldKey = GlobalKey<ScaffoldState>();
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -186,6 +189,12 @@ class _EmailSendState extends State<EmailSend> {
         appBar: AppBar(
           title: const Text('Flutter Mailer Example'),
           actions: <Widget>[
+            IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back),
+            ),
             IconButton(
               onPressed: send,
               icon: const Icon(Icons.send),
