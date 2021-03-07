@@ -20,8 +20,7 @@ class _EmailSendState extends State<EmailSend> {
 
   final TextEditingController _bodyController = TextEditingController(
       text: '''  <em>the body has <code>HTML</code></em> <br><br><br>
-  <strong>Some Apps like Gmail might ignore it</strong>
-  ''');
+  <strong>Some Apps like Gmail might ignore it</strong> ''');
 
   final GlobalKey<ScaffoldState> _scafoldKey = GlobalKey<ScaffoldState>();
 
@@ -29,6 +28,7 @@ class _EmailSendState extends State<EmailSend> {
   Future<void> send() async {
     if (Platform.isIOS) {
       final bool canSend = await FlutterMailer.canSendMail();
+
       if (!canSend) {
         const SnackBar snackbar =
             const SnackBar(content: Text('no Email App Available'));
@@ -52,6 +52,7 @@ class _EmailSendState extends State<EmailSend> {
 
     try {
       final MailerResponse response = await FlutterMailer.send(mailOptions);
+
       switch (response) {
         case MailerResponse.saved:
           platformResponse = 'mail was saved to draft';
@@ -72,9 +73,11 @@ class _EmailSendState extends State<EmailSend> {
     } on PlatformException catch (error) {
       platformResponse = error.toString();
       print(error);
+
       if (!mounted) {
         return;
       }
+
       await showDialog<void>(
         context: _scafoldKey.currentContext,
         builder: (BuildContext context) => AlertDialog(
@@ -249,8 +252,8 @@ class _EmailSendState extends State<EmailSend> {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Builder(
-                builder: (BuildContext context) => FlatButton(
-                  textColor: Theme.of(context).primaryColor,
+                builder: (BuildContext context) => TextButton(
+                  //textColor: Theme.of(context).primaryColor,
                   child: const Text('add text File'),
                   onPressed: () => _onCreateFile(context),
                 ),
@@ -274,6 +277,7 @@ class _EmailSendState extends State<EmailSend> {
   void _onCreateFile(BuildContext context) async {
     final TempFile tempFile = await _showDialog(context);
     final File newFile = await writeFile(tempFile.content, tempFile.name);
+
     setState(() {
       attachment.add(newFile.path);
     });
@@ -331,9 +335,9 @@ class _EmailSendState extends State<EmailSend> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                RaisedButton(
-                  color: Theme.of(context).accentColor,
-                  textColor: Theme.of(context).accentTextTheme.button.color,
+                ElevatedButton(
+                  //color: Theme.of(context).accentColor,
+                  //textColor: Theme.of(context).accentTextTheme.button.color,
                   child: const Icon(Icons.save),
                   onPressed: () {
                     final TempFile tempFile =
@@ -364,6 +368,7 @@ class _EmailSendState extends State<EmailSend> {
 
   Future<File> _localFile(String fileName) async {
     final String path = await (useTempDirectory ? _tempPath : _localAppPath);
+
     return File('$path/$fileName.txt');
   }
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -15,7 +14,8 @@ class _PhoneCallerState extends State<PhoneCaller> {
   @override
   void initState() {
     super.initState();
-    _numberCtrl.text = "085921191121";
+    //_numberCtrl.text = "085921191121";
+    _numberCtrl.text = "5524993273393";
   }
 
   @override
@@ -42,7 +42,7 @@ class _PhoneCallerState extends State<PhoneCaller> {
               keyboardType: TextInputType.number,
             ),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text("Test Call"),
             onPressed: () async {
               FlutterPhoneDirectCaller.callNumber(_numberCtrl.text);
