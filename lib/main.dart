@@ -1,5 +1,6 @@
 import 'package:email_phone/email_flutter_mailer.dart';
 import 'package:email_phone/phone.dart';
+import 'package:email_phone/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -88,6 +89,28 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         "Phone",
+                        style: TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.w200,
+                            fontFamily: "Roboto"),
+                      ),
+                    )),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => (UrlLauncherApp()),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "URL Launcher",
                         style: TextStyle(
                             fontSize: 22.0,
                             fontWeight: FontWeight.w200,
