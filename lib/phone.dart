@@ -39,7 +39,7 @@ class _PhoneCallerState extends State<PhoneCaller> {
             child: TextField(
               controller: _numberCtrl,
               decoration: InputDecoration(labelText: "Phone Number"),
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.phone,
             ),
           ),
           ElevatedButton(
