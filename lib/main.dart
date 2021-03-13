@@ -2,6 +2,7 @@ import 'package:email_phone/email_flutter_mailer.dart';
 import 'package:email_phone/phone.dart';
 import 'package:email_phone/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(new EmailPhone());
@@ -111,10 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         "URL Launcher",
-                        style: TextStyle(
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.w200,
-                            fontFamily: "Roboto"),
+                        //style: GoogleFonts.oswald(textStyle: Theme.of(context).textTheme.headline4, fontSize: 22),
+                        style: GoogleFonts.lato(
+                            fontStyle: FontStyle.normal, fontSize: 22),
+                        //style: TextStyle(
+                        //    fontSize: 22.0,
+                        //    fontWeight: FontWeight.w200,
+                        //    fontFamily: "Roboto"),
                       ),
                     )),
               ),
