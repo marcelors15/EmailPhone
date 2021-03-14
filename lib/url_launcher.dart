@@ -134,6 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
                     onChanged: (String text) => _phone = text,
+                    keyboardType: TextInputType.phone,
                     decoration: const InputDecoration(
                         hintText: 'Input the phone number to launch')),
               ),
