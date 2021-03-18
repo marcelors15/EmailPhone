@@ -17,14 +17,15 @@ class UrlLauncherApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'URL Launcher'),
+      home: MyHomePage(title: 'URL Launcher', context: context),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title, this.context}) : super(key: key);
   final String title;
+  final BuildContext context;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -124,6 +125,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        elevation: 0,
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pop(widget.context);
+            },
+            icon: const Icon(Icons.arrow_back_ios),
+          ),
+          IconButton(
+            icon: const Icon(Icons.add_alert_outlined),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a snackbar')));
+            },
+          ),
+        ],
       ),
       body: ListView(
         children: <Widget>[
