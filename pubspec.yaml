@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  mailer: ^4.0.0
   flutter_phone_direct_caller: ^1.0.1
 
   flutter_mailer: ^1.0.1
