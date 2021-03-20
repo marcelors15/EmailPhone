@@ -54,11 +54,17 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5.0),
-                child: SelectableText("SelectableText"),
-                //child: EditableText("EditableText"),
+                child: SelectableText("Selectable Text"),
               ),
-
-
+              /*Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: EditableText(
+                    controller: controller,
+                    focusNode: focusNode,
+                    style: style,
+                    cursorColor: cursorColor,
+                    backgroundCursorColor: backgroundCursorColor),
+              ),*/
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
