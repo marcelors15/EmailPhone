@@ -54,6 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5.0),
+                child: SelectableText("SelectableText"),
+                //child: EditableText("EditableText"),
+              ),
+
+
+              Padding(
+                padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
