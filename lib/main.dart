@@ -55,15 +55,21 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: SelectableText(
-                  "Selectable Text",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: SelectableText(
+                    "Selectable Text",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.w200,
+                        fontFamily: "Roboto"),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  color: Color(0xff0d5aa7),
+                  backgroundBlendMode: BlendMode.srcOver,
                 ),
               ),
               Padding(
