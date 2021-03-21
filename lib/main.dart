@@ -34,6 +34,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final edtController = TextEditingController();
+  final fNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,17 +57,28 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5.0),
-                child: SelectableText("Selectable Text"),
+                child: SelectableText(
+                  "Selectable Text",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.w200,
+                      fontFamily: "Roboto"),
+                ),
               ),
-              /*Padding(
+              Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: EditableText(
-                    controller: controller,
-                    focusNode: focusNode,
-                    style: style,
-                    cursorColor: cursorColor,
-                    backgroundCursorColor: backgroundCursorColor),
-              ),*/
+                    controller: edtController,
+                    focusNode: fNode,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w200,
+                        fontFamily: "Roboto"),
+                    cursorColor: Colors.blue,
+                    backgroundCursorColor: Colors.green),
+              ),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
