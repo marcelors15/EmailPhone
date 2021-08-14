@@ -186,6 +186,7 @@ class _EmailSendState extends State<EmailSend> {
     );
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.red),
       home: Scaffold(
         key: _scafoldKey,

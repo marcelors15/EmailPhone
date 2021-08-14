@@ -18,6 +18,7 @@ class UrlLauncherApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'URL Launcher', context: context),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
