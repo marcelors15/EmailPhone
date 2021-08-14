@@ -1,6 +1,7 @@
 import 'package:email_phone/email_flutter_mailer.dart';
 import 'package:email_phone/phone.dart';
 import 'package:email_phone/url_launcher.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,17 +12,19 @@ void main() {
 class EmailPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    //return new MaterialApp(
+    return new CupertinoApp(
       title: 'Auto Email and Phone',
-      theme: new ThemeData(
+      /*theme: new ThemeData(
         //primarySwatch: Colors.lightGreen,
         primarySwatch: Colors.lightBlue,
         //primaryColor: Colors.blueGrey,
         primaryColor: Colors.blue,
         accentColor: Colors.blueAccent,
         canvasColor: Colors.white,
-      ),
+      ),*/
       home: new MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -39,9 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
+    //return Scaffold(
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(
           "Email and Phone",
           style: TextStyle(
               fontSize: 20.0,
@@ -49,7 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
               fontFamily: "Roboto"),
         ),
       ),
-      body: Center(
+      /*appBar: AppBar(
+        title: Text(
+          "Email and Phone",
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w400,
+              fontFamily: "Roboto"),
+        ),
+      ),*/
+      //body: Center(
+      child: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
